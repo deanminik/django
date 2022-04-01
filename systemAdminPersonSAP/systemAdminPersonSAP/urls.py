@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from webapp.views import welcomefunction, saybye
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('welcome/', welcomefunction)
+    path('', welcomefunction),
+    path('bye.html', saybye)
 ]
