@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style="text-align: center;">Welcome to the system person</h1>
+            </div>
+            <div>
+                Number of persons : {{no_persons}}
+            </div>
+            <div>
+                <a href="new_person">Add new person</a>
+            </div>
+            <div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for person in allpersons %}
+                        <tr>
+                            <td>{{person.id}}</td>
+                            <td>{{person.name}} {{person.lastname}}</td>
+                            <td>{{person.email}}</td>
+                            <td><a href="detail_person/{{person.id}}">See details</a></td>
+                            <td><a href="edit_person/{{person.id}}">Edit</a></td>
+                            <td><a href="delete_person/{{person.id}}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- <div>
+                {{msg1}}
+            </div>
+            <div>
+                {{msg2}}
+            </div> -->
+        </div>
+    </div>
+
+</body>
+
+</html>

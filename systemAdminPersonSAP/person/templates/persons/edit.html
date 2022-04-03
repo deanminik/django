@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person</title>
+</head>
+<body>
+<form method="POST" >
+    <h1>Edit person</h1>
+    <table>
+        {{shapePerson}}
+    </table>
+<button type="submit">Send</button>
+{% csrf_token %}
+<!-- that was a token created by django  -->
+</form>
+</body>
+</html>
